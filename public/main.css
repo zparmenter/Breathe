@@ -1,0 +1,294 @@
+:root {
+    --dark-background: #000;
+    --dark-text-color: #fff;
+    --light-background: #fff;
+    --light-text-color: #000;
+}
+
+body {
+    transition: 0.5s ease-in-out;
+}
+
+.light-mode {
+    background-color: var(--light-background);
+    color: var(--light-text-color);
+}
+
+.dark-mode {
+    background-color: var(--dark-background);
+    color: var(--dark-text-color);
+}
+
+header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    transition: 0.5s ease-in-out;
+}
+
+h1::after {
+    content: '';
+    display: flex;
+    justify-content: center;
+    height: 2px;
+    background-color: black;
+    width: 1%;
+    animation-duration: 4s;
+    animation-name: headerAnimation;
+    animation-iteration-count: 2;
+    animation-direction: normal;
+    position: absolute;
+    bottom: 0px;
+}
+
+h1.light-mode::after {
+    background-color: #000;
+}
+
+h1.dark-mode::after {
+    background-color: #fff;
+}
+
+@keyframes headerAnimation {
+    0% {
+        width: 1%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 1%;
+    }
+}
+
+.mode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.mode-btn {
+    height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.time-cards {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+body.light-mode .card {
+    border: 1px solid black;
+}
+
+body.dark-mode .card {
+    border: 1px solid #fff;
+}
+
+.arrow {
+    font-size: 30px;
+}
+
+.count {
+    font-size: 40px;
+}
+
+.down.arrow {
+    transform: rotate(180deg);
+}
+
+.timer-container {
+    margin-top: 50px;
+}
+
+.timer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.minutes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.launch-pad {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.launch-btn {
+    height: 40px;
+    width: 100px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.start {
+    background-color: green;
+    color: #fff;
+}
+
+.reset {
+    background-color: red;   
+    color: #fff;
+}
+
+.meditate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#time {
+    font-size: 60px;
+}
+
+.zen-bubble-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zen-bubble {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: pink;
+    animation-duration: 4s;
+    animation-name: bubblePulse;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+.zen-bubble.inhale {
+    animation-duration: 4s;
+    animation-name: bubbleInhale;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+.zen-bubble.hold-1 {
+    opacity: 1;
+    transform: scale(2);
+}
+
+.zen-bubble.exhale {
+    animation-duration: 4s;
+    animation-name: bubbleExhale;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+}
+
+.zen-bubble.hold-2 {
+    opacity: 0.5;
+    transform: scale(1);
+}
+
+@keyframes bubblePulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+@keyframes bubbleInhale {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(2);
+    }
+}
+
+@keyframes bubbleExhale {
+    0% {
+        opacity: 1;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.error-modal {
+    position: fixed;
+    display: none;
+    top: 0px;
+    background-color: white;
+    color: #000;
+    height: 10%;
+    width: 100%;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}

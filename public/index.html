@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='./main.css'>
+    <script src='./app.js' defer></script>
+    <title>Breathe</title>
+</head>
+<body class='dark-mode'>
+    <header>
+        <h1 class='dark-mode'>Breathe</h1>
+    </header>
+
+    <div class='mode'>
+        <button class='light-mode mode-btn'>Light</button>
+        <button class='dark-mode mode-btn selected'>Dark</button>
+    </div>
+
+    <section class='control-center'>
+        <div class='time-cards'>
+            <div class='card-wrapper'>
+                <div class='card-label'>Inhale</div>
+                <div class='card breathe-in'>
+                    <div class='up arrow'>^</div>
+                    <div class='count'>0</div>
+                    <div class='down arrow'>^</div>
+                </div>
+            </div>
+            <div class='card-wrapper'>
+                <div class='card-label'>Hold</div>
+                <div class='card hold-in'>
+                    <div class='up arrow'>^</div>
+                    <div class='count'>0</div>
+                    <div class='down arrow'>^</div>
+                </div>
+            </div>
+            <div class='card-wrapper'>
+                <div class='card-label'>Exhale</div>
+                <div class='card breathe-out'>
+                    <div class='up arrow'>^</div>
+                    <div class='count'>0</div>
+                    <div class='down arrow'>^</div>
+                </div>
+            </div>
+            <div class='card-wrapper'>
+                <div class='card-label'>Hold</div>
+                <div class='card hold-out'>
+                    <div class='up arrow'>^</div>
+                    <div class='count'>0</div>
+                    <div class='down arrow'>^</div>
+                </div>
+            </div>
+        </div>
+
+        <div class='timer-container'>
+            <div class='timer-wrapper'>
+                <div class='timer-label'>How many minutes?</div>
+                <div class='time-adjuster'>
+                    <div class='minutes'>
+                        <div class='up arrow timer'>^</div>
+                        <div class='count'>0</div>
+                        <div class='down arrow timer'>^</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='launch-pad'>
+            <button class='launch-btn start'>Start</button>
+            <button class='launch-btn reset'>Reset</button>
+        </div>
+    </section>
+
+    <section class='meditate deactived'>
+        <span id="time">00:00</span>
+        <h2 class='breathing-state'>Let's get Started</h2>
+    </section>
+
+    <section class='zen-bubble-container'>
+        
+        <div class='zen-bubble'></div>
+    </section>
+
+    <footer>
+        <div>Made with ❤️ by Zach</div>
+    </footer>
+
+    <div class='error-modal'><span class='close'>X</span><p class='error-message'></p></div>
+    
+</body>
+</html>
